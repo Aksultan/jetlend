@@ -118,3 +118,94 @@ button:hover{
 .login-btn img{
     text-align: center;
 }
+
+.section-about{
+    background: radial-gradient(70.23% 381.6% at 6.53% 10.52%, #0A2E37 36.32%, #000000 100%);
+    height: fit-content;
+}
+
+.wrapper-section-about{
+    padding: 50px 0 135px;
+    height: 100%;
+    background: url('./assets/images/person.png') 110% bottom no-repeat, url('./assets/images/about-circle-top.svg') 150% -587% no-repeat, url('./assets/images/about-circle-bottom.svg') -85% 289px no-repeat;
+}
+
+.section-about-sponsors{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.section-about-sponsors figure{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 192px;
+}
+
+.section-about-category-items .active::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary);
+    left: 0;
+    bottom: -15%;
+}
+
+.section-about-category-items li{
+    display: inline;
+    position: relative;
+    font: 16.64px RedRingMedium;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.section-about-category-items li:not(:last-child){
+    margin-right: 44px;
+}
+
+.section-about-category-items li:not(:last-child)::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: var(--secondary);
+    right: -40%;
+    top: 0;
+}
+
+h1{
+    font: 75px RedRingMedium;
+    color: var(--primary);
+    width: 75%;
+}
+
+.section-about-options ul{
+    padding-left: 19px;
+}
+
+.section-about-options li{
+    display: inline;
+    position: relative;
+    font: 19px RedRingRegular;
+    color: var(--primary);
+}
+
+.section-about-options li:not(:last-child){
+    margin-right: 58px;
+}
+
+.section-about-options li::after{
+    position: absolute;
+    content: '';
+    padding: 4px;
+    background-color: var(--secondary);
+    left: -12%;
+    top: 38%;
+    border-radius: 50%;
+}
+
+.section-about-btn{
+    padding: 15px;
+    margin-top: 50px;
+}
