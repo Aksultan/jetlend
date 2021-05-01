@@ -230,7 +230,6 @@ h2{
 .section-advantages-types div{
     padding: 42px;
     max-width: 413px;
-    /* min-height: 175px; */
     color: var(--tertiary);
     background-color: var(--quatenery);
 }
@@ -244,3 +243,87 @@ h2{
     font: 13px RedRingRegular;
     max-width: 305px;
 }
+
+.section-info{
+    background: url('./assets/images/main-circle.svg') center 22% no-repeat, radial-gradient(70.23% 381.6% at 6.53% 10.52%, #0A2E37 36.32%, #000000 100%);
+}
+
+.section-info h2{
+    color: var(--primary);
+}
+
+.wrapper-section-info{
+    padding: 82px 0 76px;
+}
+
+.section-info-steps{
+    font: 15px RedRingRegular;
+    color: var(--primary);
+}
+
+.section-info-steps ul{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.section-info-steps ul::after{
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 65%;
+    left: 16%;
+    top:20%;
+    height: 3px;
+    background-color: var(--secondary);
+}
+
+.section-info-steps li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 223px;
+}
+
+.list-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 15px RedRingMedium;
+    text-align: center;
+    background-color: #000;
+    border: 4px solid var(--secondary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 18px;
+    color: var(--primary);
+}
+
+.section-info-steps .active{
+    position: relative;
+    background-color: var(--secondary);
+}
+
+@keyframes grow {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.5);}
+    100% {transform: scale(1);}
+}
+
+.section-info-steps .active::after{
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 180%;
+    height: 180%;
+    background-color: var(--secondary);
+    opacity: 0.25;
+    border-radius: 50%;
+    animation: grow 2s infinite;
+}
+
