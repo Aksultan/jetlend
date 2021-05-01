@@ -2,6 +2,7 @@
     --primary: #fff;
     --secondary: #0ED193;
     --tertiary: #000;
+    --quatenery: #F0F5F6;
 }
 
 
@@ -208,4 +209,38 @@ h1{
 .section-about-btn{
     padding: 15px;
     margin-top: 50px;
+}
+
+.section-advantages{
+    padding: 60px 0 65px;
+}
+
+h2{
+    margin: 0 0 37px;
+    text-align: center;
+    font: 35px RedRingMedium;
+    color: var(--tertiary);
+}
+
+.section-advantages-types{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-advantages-types div{
+    padding: 42px;
+    max-width: 413px;
+    /* min-height: 175px; */
+    color: var(--tertiary);
+    background-color: var(--quatenery);
+}
+
+.section-advantages-types h3{
+    font: 25px RedRingMedium;
+    margin: 0 0 15px;
+}
+
+.section-advantages-types p{
+    font: 13px RedRingRegular;
+    max-width: 305px;
 }
