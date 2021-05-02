@@ -103,20 +103,20 @@
                                 <label for="sum">
                                     Желаемая сумма кредита
                                 </label>
-                                <input type="number" value="50000" id="sum" min="50000" max="1000000"/>
+                                <input type="text" value="50 000 ₽" id="sum" disabled/>
                                 <input type="range" id="sumrange" value="50000" min="500000" max="10000000" step="100000">
                             </div>
                             <div class="range-month">
                                 <label for="months">
                                     Срок кредита
                                 </label>
-                                <input type="number" id="months" value="1" min="1" max="12"/>
+                                <input type="text" id="months" value="1" disabled/>
                                 <input type="range" id="summonths" value="1" min="1" max="12" step="1">
                             </div>
                         </div>
                         <div class="calculator-right-side">
                             <h5>Ежемесячный платеж</h4>
-                            <h4>1 000 000 <span>₽</span></h5>
+                            <h4>52 525 <span>₽</span></h5>
                                 <hr/>
                             <button>Получить кредит</button>
                         </div>
@@ -170,20 +170,75 @@
                     </div>
                 </div>
             </section>
+            <footer>
+                <div class="wrapper wrapper-footer">
+                    <div class="first-row">
+                        <img src="./assets/images/logo-inversed.svg" alt="логотип jetlend"/>
+                        <nav>
+                            <ul>
+                                <li>инвесторам</li>
+                                <li>предпринимателям</li>
+                                <li>партнерам</li>
+                            </ul>
+                            <ul>
+                                <li>документы</li>
+                                <li>о платформе</li>
+                                <li>новости</li>
+                            </ul>
+                        </nav>
+                        <p class="footer-text">
+                            Москва, территория инновационного центра «Сколково», ул. Нобеля, д. 5, эт/пом/раб 2/8/2
+                        </p>
+                        <button class="login-btn footer-btn">
+                            Войти
+                            <img src="./assets/images/login.svg" alt="">
+                        </button>
+                        <p class="footer-text">
+                            © 2018 —2021 Все права защищены ООО «ДжетЛэнд», официальный сайт Лицензия ЦБ РФ №18
+                        </p>
+                    </div>
+                    <div class="second-row">
+                        <div class="socials">
+                            <img src="./assets/images/socials/facebook.svg" alt="facebook logo">
+                            <img src="./assets/images/socials/instagram.svg" alt="instagram logo">
+                            <img src="./assets/images/socials/youtube.svg" alt="youtube logo">
+                            <img src="./assets/images/socials/telegram.svg" alt="telegram logo">
+                        </div>
+                        <div class="sponsor-icons">
+                            <img src="./assets/images/bank.svg" alt="логотип Банка России" width="89.57">
+                            <img src="./assets/images/sk.svg" alt="логотип SK" width="32.54">
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </main>
     </body>
     <script>
+        var month = document.getElementById("months")
+        var sum = document.getElementById("sum")
+        var total = document.querySelector("h4")
         document.getElementById("sumrange").addEventListener("input", function(){
             let that = this;
             colorTransition(that); 
-            document.getElementById("sum").value = this.value;            
+            sum.value = numberSpacing(this.value)+" ₽";
+            month.value&&sum.value?updateTotal():(total.value=0+" ₽");
         });
 
         document.getElementById("summonths").addEventListener("input", function(){
             let that = this;
             colorTransition(that); 
-            document.getElementById("months").value = this.value;
+            month.value = this.value;
+            month.value&&sum.value?updateTotal():(total.value=0+" ₽");
         });
+
+        function updateTotal(){
+            //5.05%
+            total.textContent = numberSpacing(Math.floor(sum.value.replace(/\D+/g, '')/month.value+sum.value.replace(/\D+/g, '')*0.0505))+" ₽"
+        }
+
+        function numberSpacing(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
 
         function colorTransition(that) {
             var value = (that.value-that.min)/(that.max-that.min)*100
