@@ -564,4 +564,38 @@ a{
     filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(345deg) brightness(103%) contrast(103%);
 }
 
+.section-who{
+    background: var(--secondary);
+    /* float: left; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.section-who-left{
+    width: 50%;
+    float: left;
+}
 
+.section-who-right{
+    width: 50%;
+    height: fit-content;
+    float: left;
+    display: flex;
+    padding: 0 0 0 120px;
+    color: var(--primary);
+}
+
+.text{
+    width: calc(1310px / 2);
+    float: left;
+}
+
+.text h3{
+    font: 35px RedRingMedium;
+    max-width: 366px;
+}
+
+.text p{
+    font: 13px RedRingRegular;
+    max-width: 433px;
+}
