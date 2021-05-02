@@ -97,16 +97,17 @@ button{
     color: var(--primary);
     min-width: 138px;
     outline: none;
-    border: none;
+    border: 1px solid var(--secondary);
     border-radius: 5px;
     font: 15px RedRingMedium;
+    transition: 0.3s;
 }
-/* 
-button:hover{
+
+.btn:hover{
     cursor: pointer;
     border: 1px solid var(--secondary);
     background-color: transparent;
-} */
+}
 
 .login-btn{
     padding:13px 35px 15px 34px;
@@ -327,13 +328,16 @@ h2{
     animation: grow 2s infinite;
 }
 
+.calculator{
+    display: flex;
+}
+
 .section-calculator{
     position: relative;
 }
 
 .wrapper-section-calculator{
     padding: 50px 125px 81px 108px;
-    height: 476px;
     background: var(--primary);
 }
 
@@ -361,8 +365,159 @@ h2{
 
 .calculator-left-side{
     display: flex;
+    position: relative;
     flex-direction: column;
     font: 13px RedRingMedium;
+    width: 66%;
+}
+
+/* .calculator-left-side>div{
+    min-height: 122px;
+} */
+
+.calculator-left-side input{
+    width: 100%;
+}
+
+input[type="number"]{
+    border: 1px solid #E4ECEE;
+    border-radius: 5px;
+    padding: 14px 24px 17px 24px;
+    font: 25px RedRingMedium;
+    color: var(--tertiary);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    top: -13px;
+    width: 7px;
+    height: 7px;
+    padding: 4px;
+    border: 8px solid var(--secondary);
+    background-color: var(--primary);
+    border-radius:50%;
+    box-shadow: 0 0 0 6px #0ed19340;
+}
+
+input[type=range]::-webkit-slider-thumb:hover{
+    border-color: hsla(161, 87%, 44%, 0.692);
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track{
+    height: 2px;
+    background: transparent;
+}
+
+input:focus{
+    outline: none;
+}
+
+.range{
+    position: relative;
+}
+
+input[type=range]{
+    background: transparent;
+    -webkit-appearance: none;
+    -ms-progress-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="range"]{
+    position: absolute;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: -0.2%;
+    bottom: -4%;
+}
+
+.range-sum, .range-month{
+    position: relative;
+}
+
+.range-month{
+    margin-top: 56px;
+}
+
+label{
+    margin-bottom: 12px;
+}
+
+.range-sum::before{
+    content: '500 000 руб.';
+    position: absolute;
+    bottom: -40%;
+    left: 0;
+    font: 13px RedRingRegular;
+}
+
+.range-sum::after{
+    content: '10 000 000 руб.';
+    position: absolute;
+    bottom: -40%;
+    right: 0;
+    font: 13px RedRingRegular;
+}
+
+.range-month::before{
+    content: '1 месяц';
+    position: absolute;
+    bottom: -40%;
+    left: 0;
+    font: 13px RedRingRegular;
+}
+
+.range-month::after{
+    content: '12 месяцев';
+    position: absolute;
+    bottom: -40%;
+    right: 0;
+    font: 13px RedRingRegular;
+}
+
+.calculator-right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+h5{
+    font: 13px RedRingRegular;
+    margin: 0 0 46px;
+}
+
+h4{
+    font: 25px RedRingMedium;
+    margin: 11px 0 33px;
+}
+
+h4 span{
+    font-family: Robotto;
+}
+
+.calculator-right-side button{
+    padding: 18px;
+}
+
+hr{
+    height: 4px;
+    background: var(--tertiary);
+    width: 130px;
+    border: none;
+    margin-bottom: 38px;
 }
 
 a{
@@ -389,6 +544,7 @@ a{
     width: 169px;
     height: 121px;
     background: var(--primary);
+    transition: 0.3s;
 }
 
 .section-partners-list-item img{
@@ -407,4 +563,5 @@ a{
 .section-partners-list-item:hover img{
     filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(345deg) brightness(103%) contrast(103%);
 }
+
 

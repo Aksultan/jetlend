@@ -48,7 +48,7 @@
                            <li>Срок до 12 месяцев</li>  
                         </ul>
                     </div>
-                    <button class="section-about-btn">
+                    <button class="section-about-btn btn">
                         Получить кредит
                     </button>
                 </div>
@@ -99,14 +99,26 @@
                     <h2>Калькулятор заемщика</h2>
                     <div class="calculator">
                         <div class="calculator-left-side">
-                            <label for="sum">
-                                Желаемая сумма кредита
-                            </label>
-                            <input type="number" id="sum"/>
-                            <input type="range" min="500000" max="10000000" step="10000">
+                            <div class="range-sum">
+                                <label for="sum">
+                                    Желаемая сумма кредита
+                                </label>
+                                <input type="number" value="50000" id="sum" min="50000" max="1000000"/>
+                                <input type="range" id="sumrange" value="50000" min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="range-month">
+                                <label for="months">
+                                    Срок кредита
+                                </label>
+                                <input type="number" id="months" value="1" min="1" max="12"/>
+                                <input type="range" id="summonths" value="1" min="1" max="12" step="1">
+                            </div>
                         </div>
                         <div class="calculator-right-side">
-
+                            <h5>Ежемесячный платеж</h4>
+                            <h4>1 000 000 <span>₽</span></h5>
+                                <hr/>
+                            <button>Получить кредит</button>
                         </div>
                     </div>
                 </div>
@@ -145,4 +157,22 @@
             </section>
         </main>
     </body>
+    <script>
+        document.getElementById("sumrange").addEventListener("input", function(){
+            let that = this;
+            colorTransition(that); 
+            document.getElementById("sum").value = this.value;            
+        });
+
+        document.getElementById("summonths").addEventListener("input", function(){
+            let that = this;
+            colorTransition(that); 
+            document.getElementById("months").value = this.value;
+        });
+
+        function colorTransition(that) {
+            var value = (that.value-that.min)/(that.max-that.min)*100
+            that.style.background = 'linear-gradient(to right, #0ED193 0%, #0ED193 ' + value + '%, transparent ' + value + '%, transparent 100%)'
+        };
+    </script>
 </html>
