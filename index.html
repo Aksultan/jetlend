@@ -18,7 +18,7 @@
                         <li>о платформе</li>
                         <li>новости</li>
                     </ul>
-                    <button class="login-btn">
+                    <button class="login-btn alt-btn">
                         Войти
                         <img src="./assets/images/login.svg" alt="">
                     </button>
@@ -142,7 +142,7 @@
                             <h5>Ежемесячный платеж</h4>
                             <h4>52 525 <span>₽</span></h5>
                                 <hr/>
-                            <button>Получить кредит</button>
+                            <button class="alt-btn">Получить кредит</button>
                         </div>
                     </div>
                 </div>
@@ -216,7 +216,7 @@
                         <p class="footer-text">
                             Москва, территория инновационного центра «Сколково», ул. Нобеля, д. 5, эт/пом/раб 2/8/2
                         </p>
-                        <button class="login-btn footer-btn">
+                        <button class="login-btn footer-btn alt-btn">
                             Войти
                             <img src="./assets/images/login.svg" alt="">
                         </button>
@@ -273,10 +273,12 @@
         };
 
         function toggleMenu(){
-            document.querySelector("body").classList.toggle("no-scroll");
-            document.querySelector(".mobile-nav").classList.toggle("mobile-nav-active");
-            document.querySelector(".overlay").classList.toggle("overlay-active");
-            document.querySelector(".burger").classList.toggle("burger-active");
+            setTimeout(()=>{
+                document.querySelector("body").classList.toggle("no-scroll");
+                document.querySelector(".mobile-nav").classList.toggle("mobile-nav-active");
+                document.querySelector(".overlay").classList.toggle("overlay-active");
+                document.querySelector(".burger").classList.toggle("burger-active");
+            }, 300)
         }
 
         function topFunction() {
