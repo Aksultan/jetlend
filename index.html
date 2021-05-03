@@ -1,6 +1,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="./master.css">
+        <link rel="shortcut icon" href="./assets/images/jetlend.svg" type="image/x-icon">  
+        <title>Jetlend</title>\
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <header>
@@ -8,7 +11,7 @@
                 <div class="logo">
                     <img src="./assets/images/logo.svg" alt="jetlend logo">
                 </div>
-                <nav>
+                <nav class="desktop-nav">
                     <ul class="nav-items">
                         <li>инвесторам</li>
                         <li class="nav-item-active">предпринимателям</li>
@@ -20,7 +23,25 @@
                         <img src="./assets/images/login.svg" alt="">
                     </button>
                 </nav>
+                <nav class="mobile-nav">
+                    <ul class="nav-items">
+                        <li>инвесторам</li>
+                        <li class="nav-item-active">предпринимателям</li>
+                        <li>о платформе</li>
+                        <li>новости</li>
+                    </ul>
+                    <button class="login-btn">
+                        Войти
+                        <img src="./assets/images/login.svg" alt="">
+                    </button>
+                </nav>
+                <button class="burger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+            <div class="overlay" onclick="toggleMenu()"></div>
         </header>
         <main>
             <section class="section-about">
@@ -83,13 +104,16 @@
                         <ul>
                             <li>
                                 <div class="list-icon active">1</div>
-                                Пройдите регистрацию</li>
+                                <span>Пройдите регистрацию</span>
+                            </li>
                             <li>
                                 <div class="list-icon">2</div>
-                                Получите предварительное решение</li>
+                                <span>Получите предварительное решение</span>
+                            </li>
                             <li>
                                 <div class="list-icon">3</div>
-                                Пройдите верификацию и получите деньги</li>
+                                <span>Пройдите верификацию и получите деньги</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -173,7 +197,10 @@
             <footer>
                 <div class="wrapper wrapper-footer">
                     <div class="first-row">
-                        <img src="./assets/images/logo-inversed.svg" alt="логотип jetlend"/>
+                        <div class="footer-logo-container">
+                            <img src="./assets/images/logo-inversed.svg" alt="логотип jetlend"/>
+                            <img src="./assets/images/arrow.svg" alt="anchor to the top" onclick="topFunction()">
+                        </div>
                         <nav>
                             <ul>
                                 <li>инвесторам</li>
@@ -244,5 +271,17 @@
             var value = (that.value-that.min)/(that.max-that.min)*100
             that.style.background = 'linear-gradient(to right, #0ED193 0%, #0ED193 ' + value + '%, transparent ' + value + '%, transparent 100%)'
         };
+
+        function toggleMenu(){
+            document.querySelector("body").classList.toggle("no-scroll");
+            document.querySelector(".mobile-nav").classList.toggle("mobile-nav-active");
+            document.querySelector(".overlay").classList.toggle("overlay-active");
+            document.querySelector(".burger").classList.toggle("burger-active");
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </html>
